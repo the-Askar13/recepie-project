@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container">
+        
+        <form class ="col-6 mx-auto mt-3 card p-4" method ="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h2>Udate Recepie</h2>
+            <div class="mb-3">
+              <label for="recepie input" class="form-label">Recepie Name</label>
+              <input type="text" class="form-control" value={{recepie.recepie_name}}  name="recepie_name"  required>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label" >Recepie Description </label>
+              <textarea class ="form-control" {{recepie.recepie_description}} name="recepie_description"  required>{{recepie.recepie_description}}</textarea>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label" >Recepie Image </label>
+                <input type="file" class="form-control"  name="recepie_image"  required>
+              </div>
+            <button type="submit" class="btn btn-success">Update Recepie</button>
+          </form>
+    </div>                 
+    
+</body>
+</html>
+
+
